@@ -1,0 +1,12 @@
+streamlit>=1.40,<2
+psycopg[binary]>=3.2,<4
+httpx>=0.28,<1
+openai>=1.70,<3
+reportlab>=4,<5
+playwright>=1.50,<2
+pydantic>=2,<3
+python-dotenv>=1,<2
+fastapi>=0.115,<1
+uvicorn>=0.34,<1
+pytest>=8,<10
+pypdf>=5,<7

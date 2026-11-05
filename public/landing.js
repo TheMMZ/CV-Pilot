@@ -26,7 +26,7 @@ document.addEventListener('click',async event=>{
  try{
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   await Promise.all([
-   Promise.all(['/app','/api/state','/style.css','/app.js'].map(async path=>{
+   Promise.all(['/health','/api/state'].map(async path=>{
     const response=await fetch(path,{signal:controller.signal});
     if(!response.ok)throw Error('Workspace could not be loaded.');
     await response.text();

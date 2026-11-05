@@ -1,5 +1,5 @@
-Direction: Product workbench, blue-and-white with a quiet navy navigation rail.
-Motion personality: Precise UI, short easing and stable controls.
-Signature moment: A skill match opens to reveal its exact CV or GitHub source.
-Supporting layer: Button press feedback, expandable evidence, visible focus and tab states.
-Stack: CSS-native because this workflow needs responsive controls rather than scroll storytelling.
+Direction: Blue-and-white CV Pilot landing and native Streamlit application workspace.
+Motion personality: Precise CSS motion, short transitions, reduced-motion fallback.
+Signature moment: Landing walkthrough reveals the evidence-to-application workflow.
+Supporting layer: Branded loading interstitial; Streamlit navigation, forms, source expanders and downloads.
+Stack: Python + Streamlit for the workspace; CSS-native landing motion served by Python FastAPI.

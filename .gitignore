@@ -14,3 +14,11 @@ qa/
 *.log
 !env.example
 profile.seed.json
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+pytest-cache-files-*/
+
+.streamlit/secrets.toml
