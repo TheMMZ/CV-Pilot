@@ -26,14 +26,14 @@ docker compose up -d --wait postgres
 .venv\Scripts\python.exe run.py
 ```
 
-Or run `Start-CVPilot.ps1`, which performs initial setup, starts PostgreSQL, imports any previous local data, and launches the app.
+On Windows, double-click `Start-CVPilot.cmd` (or run `Start-CVPilot.ps1`). It performs initial setup, starts PostgreSQL, imports any previous local data, and starts both web services in the background. It detects an existing healthy app instead of starting duplicates. Logs are saved to ignored `data/service.log` and `data/service-error.log`.
 
 - Landing page: http://127.0.0.1:4317
 - Streamlit workspace: http://127.0.0.1:8501
 
 A fresh database uses `profile.example.json`. An ignored local `profile.seed.json` can supply a personal starting profile. Edit your profile in **Master CV**.
 
-The launcher starts both Python services and stops them on Ctrl+C. PostgreSQL remains in its Docker volume. `docker compose stop` stops the database without deleting its data. Do not run `docker compose down -v` unless you intend to delete the database volume.
+`python run.py` starts both Python services in the foreground and stops them on Ctrl+C. The Windows launcher keeps them running independently of the terminal or Codex chat. PostgreSQL remains in its Docker volume. `docker compose stop` stops the database without deleting its data. Do not run `docker compose down -v` unless you intend to delete the database volume.
 
 On Linux/macOS, use `.venv/bin/python` and run `python -m playwright install --with-deps chromium`. Leave `PLAYWRIGHT_CHANNEL` unset to use that installed Chromium browser.
 
