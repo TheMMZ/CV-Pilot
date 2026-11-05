@@ -1,0 +1,89 @@
+{
+  "name": "Test Candidate",
+  "headline": "Fifth-year Computer Engineering Student",
+  "email": "test@example.com",
+  "phone": "",
+  "github": "example",
+  "summary": "Engineering student seeking a final-year internship in data engineering.",
+  "skills": [
+    "Python",
+    "SQL",
+    "T-SQL",
+    "JavaScript",
+    "Java",
+    "PostgreSQL",
+    "JSONB",
+    "MySQL",
+    "SQL Server",
+    "React",
+    "Node.js",
+    "Express",
+    "REST APIs",
+    "Docker",
+    "Git",
+    "GitHub",
+    "Node-RED",
+    "Capacitor",
+    "IndexedDB"
+  ],
+  "education": [
+    {
+      "title": "Engineering Degree",
+      "organization": "Example University",
+      "dates": "2023 - 2027"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Developer Intern - Laboratory Department",
+      "organization": "Example employer",
+      "dates": "2026",
+      "bullets": [
+        "Developed Digital Test Records, a web and Android application to digitize laboratory test records using React, Express, PostgreSQL/JSONB, and Capacitor.",
+        "Built JSON-driven forms with automated calibration checks, tolerance validation, and statistical calculations.",
+        "Implemented offline data entry with IndexedDB, a searchable archive, and PDF exports matching official laboratory forms."
+      ]
+    },
+    {
+      "title": "Software Development Intern",
+      "organization": "Example employer",
+      "dates": "75 days",
+      "bullets": [
+        "Developed and deployed V-ecole, a responsive educational web platform.",
+        "Built PDF document processing to generate multiple-choice quizzes.",
+        "Implemented configurable quiz generation based on grade level and difficulty."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "RoadSign Voice",
+      "status": "planned",
+      "description": "Planned traffic-sign recognition with spoken alerts and a Snowflake streaming pipeline.",
+      "skills": [
+        "Python",
+        "OpenCV",
+        "YOLO",
+        "OCR",
+        "Snowflake",
+        "SQL"
+      ]
+    },
+    {
+      "name": "GitHub-Aware CV and Job Application Assistant",
+      "status": "in progress",
+      "description": "Building a GitHub evidence importer, job matcher, tailored CV generator, and application tracker.",
+      "skills": [
+        "JavaScript",
+        "Node.js",
+        "GitHub",
+        "SQL"
+      ]
+    }
+  ],
+  "languages": [
+    "Arabic: Native",
+    "English: Fluent",
+    "French: Intermediate"
+  ]
+}

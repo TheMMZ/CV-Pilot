@@ -1,0 +1,9 @@
+{
+  "name": "CV Pilot",
+  "audience": "An engineering student preparing evidence-based internship applications",
+  "palette": {"ink":"#182a42","blue":"#225ed8","mist":"#eef3fa","paper":"#ffffff","muted":"#65758b"},
+  "typography": "Georgia for document previews; Segoe UI for workspace; Consolas for evidence references",
+  "layout": "Compact navy sidebar, wide workbench, job/evidence comparison, paper CV preview",
+  "signature": "Every matched skill exposes the CV or repository evidence behind it",
+  "motion": "Minimal button and tab feedback; respect reduced motion"
+}

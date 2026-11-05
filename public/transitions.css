@@ -1,0 +1,12 @@
+@view-transition{navigation:none}
+:root{--route-duration:320ms;--route-ease:cubic-bezier(.2,.7,.3,1)}
+.brand{view-transition-name:brand}
+.view:not([hidden]){view-transition-name:workspace}
+::view-transition-old(root){animation:route-out 140ms ease both}
+::view-transition-new(root){animation:route-in var(--route-duration) var(--route-ease) both}
+::view-transition-group(brand){animation-duration:var(--route-duration);animation-timing-function:var(--route-ease)}
+::view-transition-old(workspace){animation:route-out 120ms ease both}
+::view-transition-new(workspace){animation:route-in 240ms var(--route-ease) both}
+@keyframes route-out{to{opacity:0;transform:translateY(-6px)}}
+@keyframes route-in{from{opacity:0;transform:translateY(10px)}}
+@media(prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation-duration:.01ms!important}}

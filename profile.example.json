@@ -1,0 +1,33 @@
+{
+  "name": "Your Name",
+  "headline": "Fifth-year Computer Engineering Student",
+  "email": "you@example.com",
+  "phone": "",
+  "github": "your-username",
+  "summary": "Final-year engineering student seeking an internship.",
+  "skills": [
+    "Python",
+    "SQL",
+    "T-SQL",
+    "JavaScript",
+    "Java",
+    "PostgreSQL",
+    "JSONB",
+    "MySQL",
+    "SQL Server",
+    "React",
+    "Node.js",
+    "Express",
+    "REST APIs",
+    "Docker",
+    "Git",
+    "GitHub",
+    "Node-RED",
+    "Capacitor",
+    "IndexedDB"
+  ],
+  "education": [],
+  "experience": [],
+  "projects": [],
+  "languages": []
+}

@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {extractSkills,analyze,tailor,resumeHtml} from '../src/core.mjs';
+const profile=JSON.parse(readFileSync(new URL('./fixtures/profile.json',import.meta.url),'utf8').replace(/^\uFEFF/,''));
+const job={title:'Data Intern',company:'Test',description:'Python and PostgreSQL required. Snowflake and Airflow would be useful.'};
+test('skill matching respects word boundaries and punctuation',()=>{assert.deepEqual(extractSkills('JavaScript, PostgreSQL, C++ and Node.js'),['JavaScript','C++','PostgreSQL','Node.js']);assert(!extractSkills('javascript postgres').includes('Java'));assert(!extractSkills('expressive githubber').includes('Express'));});
+test('planned project tools do not masquerade as demonstrated skills',()=>{const a=analyze(profile,[],job);assert(a.missing.includes('Snowflake'));assert(a.missing.includes('Airflow'));assert(a.matched.some(m=>m.skill==='Python'));});
+test('forks and unverified repositories are excluded from evidence',()=>{const repo={name:'snow',description:'Snowflake',readme:'',languages:[],url:'https://github.com/x/snow',verified:true,fork:true};assert(analyze(profile,[repo],job).missing.includes('Snowflake'));repo.fork=false;repo.verified=false;assert(analyze(profile,[repo],job).missing.includes('Snowflake'));repo.verified=true;assert(!analyze(profile,[repo],job).missing.includes('Snowflake'));});
+test('tailoring preserves facts and completed status is never invented',()=>{const d=tailor(profile,[],job);assert.deepEqual(new Set(d.profile.skills),new Set(profile.skills));assert.equal(d.profile.projects[0].status,'planned');assert.deepEqual(new Set(d.profile.experience[0].bullets),new Set(profile.experience[0].bullets));});
+test('CV escapes scripts and preserves planned status',()=>{const d=tailor({...profile,name:'<script>alert(1)</script>'},[],job);const h=resumeHtml(d);assert(!h.includes('<script>alert'));assert(h.includes('&lt;script&gt;'));assert(h.includes('planned'));});
+test('no recognized requirements gives unknown coverage',()=>{assert.equal(analyze(profile,[],{title:'Intern',description:'Help the team.'}).score,null);});
